@@ -1,12 +1,16 @@
-
+#https://mubaris.com/posts/kmeans-clustering/
+#https://www.geeksforgeeks.org/ml-k-means-algorithm/
 from copy import deepcopy
 from sklearn.datasets import load_iris
 import numpy as np
+import matplotlib.pyplot as plt 
 
 data=load_iris()
 
 X=data['data']
 y=data['target']
+
+
 K = 3
 # Number of training data
 n = X.shape[0]
@@ -38,6 +42,7 @@ while error != 0:
     # Calculate mean for every cluster and update the center
     for i in range(K):
         centers_new[i] = np.mean(X[clusters == i], axis=0)
+
     error = np.linalg.norm(centers_new - centers_old)
 
 centers_new
