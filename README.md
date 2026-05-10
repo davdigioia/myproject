@@ -61,8 +61,8 @@ ST-ECR-Github/
 
 ```bash
 # Clone repository
-git clone https://github.com/ucesigi/ST-ECR.git
-cd ST-ECR
+git clone https://github.com/davdigioia/myproject.git
+cd myproject
 
 # Create virtual environment
 python -m venv venv
