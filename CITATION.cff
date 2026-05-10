@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+type: software
+title: "Spatio-Temporal Epistemic Claim Retrieval (ST-ECR)"
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Sigi
+    given-names: Uce
+year-released: 2026
+date-released: 2026-05-10
+abstract: |
+  ST-ECR is a modular deep learning architecture for uncertainty-aware 
+  multi-asset portfolio allocation in non-stationary environments. 
+  The system elevates epistemic uncertainty from a passive output to an 
+  active computation routing signal across memory retrieval, representation 
+  adaptation, and portfolio allocation decisions.
+keywords:
+  - deep learning
+  - uncertainty quantification
+  - portfolio optimization
+  - spatio-temporal forecasting
+  - selective prediction
+  - epistemic uncertainty
+repository-code: "https://github.com/ucesigi/ST-ECR"
+license: MIT
+version: 1.0.0
