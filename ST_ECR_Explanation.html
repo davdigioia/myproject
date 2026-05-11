@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST-ECR v4: The Four-Route Paradigm</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --accent-color: #38bdf8;
+            --card-bg: #1e293b;
+            --border-color: #334155;
+            --highlight: #818cf8;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Subtle animated canvas background */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+        }
+
+        .card h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .problem {
+            font-weight: 600;
+            color: #f87171;
+            margin-bottom: 1rem;
+        }
+
+        .explanation {
+            color: #cbd5e1;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .math {
+            font-family: 'Cambria Math', 'Latin Modern Math', serif;
+            font-style: italic;
+            color: var(--highlight);
+            background: rgba(129, 140, 248, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+
+        .pitch {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border: 2px solid var(--accent-color);
+            text-align: center;
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-top: 4rem;
+            box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.15);
+        }
+
+        .pitch h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pitch p {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #f1f5f9;
+            margin: 0;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="container">
+        <h1>ST-ECR v4: The Four-Route Paradigm</h1>
+        <div class="subtitle">Timescale Separation & Catastrophic Forgetting Defense</div>
+
+        <div style="margin-bottom: 3rem;">
+            <h2 style="color: var(--accent-color); border-bottom: 2px solid var(--border-color); padding-bottom: 0.5rem;">The Mechanics: Four Levels of Epistemic Routing</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                <div style="background: rgba(30, 41, 59, 0.8); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); border-top: 3px solid #60a5fa;">
+                    <h3 style="margin-top: 0; color: #60a5fa; font-size: 1.1rem;">Route 1: Memory Retrieval</h3>
+                    <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 0;"><strong>Computation Control:</strong> When draft <span class="math">&sigma;<sub>ep</sub></span> is high, the model queries historical latent trajectories from the episodic memory bank to gain context on rare events.</p>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.8); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); border-top: 3px solid #f472b6;">
+                    <h3 style="margin-top: 0; color: #f472b6; font-size: 1.1rem;">Route 2: Conformal Abstention</h3>
+                    <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 0;"><strong>Decision Control:</strong> When <span class="math">&sigma;<sub>ep</sub> > &omega;</span> (rolling quantile), the gate triggers a hard "do not trade" signal to protect capital from extreme uncalibrated uncertainty.</p>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.8); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); border-top: 3px solid #34d399;">
+                    <h3 style="margin-top: 0; color: #34d399; font-size: 1.1rem;">Route 3: Position Sizing</h3>
+                    <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 0;"><strong>Sizing Control:</strong> <span class="math">&sigma;<sub>ep</sub></span> dynamically acts as a risk discount &lambda; in the Kelly criterion formula, smoothly shrinking the allocation weighting as uncertainty rises.</p>
+                </div>
+                <div style="background: rgba(30, 41, 59, 0.8); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color); border-top: 3px solid #fbbf24;">
+                    <h3 style="margin-top: 0; color: #fbbf24; font-size: 1.1rem;">Route 4: Online Update</h3>
+                    <p style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 0;"><strong>Self-Improvement:</strong> When <span class="math">&sigma;<sub>ep</sub> > &tau;<sub>online</sub></span>, the adapter freezes the encoder and initiates gradient steps strictly on the ensemble heads using recent data.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>1. The Financial Perspective (Market Regimes & Risk Management)</h2>
+            <div class="problem">The Problem: Financial markets are non-stationary; they undergo sudden, violent regime shifts (e.g., a macro shock or flash crash).</div>
+            <div class="explanation">
+                <p>When the market breaks its historical pattern, the model's epistemic uncertainty (<span class="math">&sigma;<sub>ep</sub></span>) spikes. From a portfolio management perspective, the model immediately plays defense: Route 2 (Abstention) and Route 3 (Position Sizing) pull capital out of the market. However, a fund cannot sit in cash forever.</p>
+                <p><strong>Route 4 (Online Update)</strong> acts as the fund's internal quant team: it uses the recent chaotic window of data to recalibrate its expectations.</p>
+                <p>By only updating the ensemble "heads", the model learns the new short-term volatility and correlation regime (the "current weather") while completely preserving its deep structural knowledge of asset fundamentals (the "long-term climate") stored in the frozen encoder.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>2. The Spatio-Temporal Perspective (Manifold Preservation)</h2>
+            <div class="problem">The Problem: Spatio-temporal architectures require massive amounts of historical data to learn the complex, multi-asset topological graphs and temporal dynamics.</div>
+            <div class="explanation">
+                <p>The ST-Encoder projects sequences into a very specific latent geometry. If we updated the whole network on new data, we would warp this latent space, destroying the model's ability to match current patterns to historical trajectories (Route 1 Memory Retrieval).</p>
+                <p><strong>Timescale Separation</strong> locks the spatial and temporal parameters in place. We view the ST-Encoder as capturing the fundamental "physics" of the asset universe. Even during a crash, these underlying physics don't change; only the immediate mapping from those physics to expected returns and variance changes. Route 4 updates this mapping without destroying the beautifully crafted space-time manifold.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>3. The Online Learning Perspective (The Stability-Plasticity Dilemma)</h2>
+            <div class="problem">The Problem: In continual learning, models face the "stability-plasticity dilemma." If a model is too plastic, it suffers from catastrophic forgetting (overwriting old knowledge with recent noise). If it's too stable, it fails to adapt to concept drift.</div>
+            <div class="explanation">
+                <p>ST-ECR solves this through a dual mechanism:</p>
+                <ul>
+                    <li><strong>Trigger-Gated Plasticity:</strong> Unlike Test-Time Training (which stupidly updates on every sample), Route 4 is self-referential. It only fires when <span class="math">&sigma;<sub>ep</sub> > &tau;<sub>online</sub></span>. The model literally uses its own ignorance as the mathematical trigger to self-improve, making it both computationally efficient and resilient to overfitting on normal noise.</li>
+                    <li><strong>Structural Stability:</strong> By mathematically severing the gradients to the encoder (<span class="math">&part;&#x2112; / &part;&theta;<sub>enc</sub> = 0</span>), we achieve perfect timescale separation. The slow feature-extractor remains perfectly stable (zero catastrophic forgetting), while the fast ensemble heads remain highly plastic to resolve the immediate distribution shift.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pitch">
+            <h3>The Elevator Pitch for a Reviewer</h3>
+            <p>"ST-ECR v4 treats epistemic uncertainty as a self-referential control signal. When the model doesn't recognize a market regime, it uses Routes 2 and 3 to stop trading so it doesn't lose money, while simultaneously triggering Route 4 to actively learn the new regime. And it does this via strict timescale separation, adapting its predictive heads to the new environment without categorically forgetting the historical spatial-temporal structures it learned offline."</p>
+        </div>
+    </div>
+
+    <script>
+        // Subtle network/node background effect on canvas
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        let width, height;
+        let particles = [];
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = Math.random() * 2 + 1;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#38bdf8';
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 80; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 150) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(56, 189, 248, ${1 - dist/150})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>
